@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <h4> Title: {{ objects.title }} and Content: {{ objects.content }} </h4>
+
+    <ul>
+        {% for x in queryset %}
+            {% if x.title %}
+                <li><a href="article/{{ x.id }}">{{ x.title }} ----- {{ x.content }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock content %}

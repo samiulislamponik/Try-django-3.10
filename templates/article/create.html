@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if not created %}
+
+<div class="container">
+    <h5>This is for add content:</h5>
+    <form action="." method="POST">
+        {% csrf_token %}
+        <label for="title">Title:</label><br>
+        <input type="text" name="title"/><br>
+        <label for="content">Content:</label><br>
+        <textarea name="content" cols="30" rows="5"></textarea><br>
+        <button type="submit">Publish</button>
+    </form>
+
+{% else %}
+    <p>The Article is published successfully!! </p>
+    <a href="/article/{{ article_obj.id }}">{{ article_obj.title }} ----- {{ article_obj.content }}</a>
+</div>
+{% endif %}
+
+{% endblock content %}

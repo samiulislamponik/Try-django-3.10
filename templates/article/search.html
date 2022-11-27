@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    {% if article_object != None %}
+    <h3>This is the object of id: {{ article_object.id }}</h3>
+    <h4>Title: {{ article_object.title }}</h4>
+    <h4>Content: {{ article_object.content }}</h4>
+    {% endif %}
+</div>
+
+{% endblock content %}
